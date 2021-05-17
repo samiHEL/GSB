@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VisiteurController!{% endblock %}
+{% block stylesheets %}  
+                <LINK rel="stylesheet" href={{ asset('css/style.css') }}  type="text/css">
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+    a:link, a:visited {
+    background-color: #444444;
+    color: white;
+    padding: 12px 21px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    }
+
+    a:hover, a:active {
+    background-color: red;
+    }
+</style>
+
+<nav class="topnav">
+  <a href="#" onclick="openNav()">
+    <svg width="30" height="30" id="icoOpen">
+        <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+        <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+        <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+    </svg>
+  </a>
+  <center><b>GSB Visiteur-Connexion<b><center>
+</nav>
+
+<div class="example-wrapper">
+   
+    <h1>Connexion</h1>
+    
+    {{ form(formulaire) }}
+    
+    </br>
+    
+    <p style=
+    "
+    border-left: 6px solid red;
+    background-color: #ffe6e6;
+    text-indent: 1.5%;
+    text-max-width: 40%;
+    color: red;
+    "
+    >{{ connection }}</p>
+    
+    <a id="btn_delete" href="{{ path( 'accueil' ) }}">Retour à la sélection</a>
+
+</div>
+{% endblock %}

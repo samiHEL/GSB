@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VisiteurController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    table { font-family: arial, sans-serif; border-collapse: collapse; width: 100%;}
+    td, th { border: 1px solid #000033; text-align: left; padding: 8px; text-align: center;}
+
+    a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 12px 21px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    }
+
+    a:hover, a:active {
+    background-color: red;
+    }
+
+    .footer {
+    position: none;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 200%;
+    min-height: 300%;
+    background-color: none;
+    color: white;
+    text-align: center;
+    }
+    
+</style>
+
+<div class="example-wrapper">
+    
+<div>
+
+    <h1>Consultation des frais</h1>
+    
+    <p style=
+    "
+    border-left: 6px solid yellowgreen;
+    background-color: #e6ffe6;
+    text-indent: 1.5%;
+    text-max-width: 40%;
+    color: yellowgreen;
+    "
+    > Connecté : {{ prenomV }} {{ nomV }} {{ idVisiteur }}  </p>
+    {{ form(formulaire) }}
+    </br>
+
+    {#{% set total = totalff + fiche['montant'] %}#}
+    {% set total = totalff + totfhf['montant'] %}
+    
+    <p>Fiche de frais pour le mois selectionné : {{ b1date }}</p>
+    
+    <table>
+  <tr>
+    <!--<th></th>-->
+    <th>Montant total</th>
+    <th>Montant ff</th>
+    <th>Montant fhf</th>
+    <th>Date de création</th>
+    <th>Dernière date de modification</th>
+    <th>Etat</th>
+  </tr>
+  <tr>
+         <!--<td>{{ fiche['libelle'] }}</td>-->
+         <!--<td></td>-->
+         <td style="color: red">{{ total }}</td>
+         <td>{{ totalff }}</td>
+         <!--<td>{{ fiche['montant'] }}</td>-->
+         <td>{{ totfhf['montant'] }}</td>
+         <td>01 {{ b1date }}</td> 
+         <td>{{ fiche['dateModif'] }}</td>
+         <td>{{ fiche['id'] }}</td>
+  </tr> 
+    </table>
+        <br/>
+    <table>
+  <tr>
+    <th></th>
+    <th>Forfait étape </th>
+    <th>Frais kilométrique</th>
+    <th>Nuité d'hotel</th>
+    <th>Repas restaurant</th>
+    <th>Élément(s) hors forfait</th>
+  </tr>  
+  <tr>
+      <td><strong>Quantité</td>
+      <td><tt style="color:blue">{{ quant[0]['quantite'] }}</tt></td>
+      <td><tt style="color:blue">{{ quant[1]['quantite'] }}</tt></td>
+      <td><tt style="color:blue">{{ quant[2]['quantite'] }}</tt></td>
+      <td><tt style="color:blue">{{ quant[3]['quantite'] }}</tt></td>
+      <td><tt style="color:blue">{{ res2['compteur'] }}</tt></td>
+  </tr> 
+  <tr>
+      <td><strong>Montant par frais</strong></td>
+      <td>{{ aze[0] }}<br/>( <tt style="color:blue">{{ quant[0]['quantite'] }}</tt> * 110 )</td>
+      <td>{{ aze[1] }}<br/>( <tt style="color:blue">{{ quant[1]['quantite'] }}</tt> * 0.62 )</td>
+      <td>{{ aze[2] }}<br/>( <tt style="color:blue">{{ quant[2]['quantite'] }}</tt> * 80 )</td>
+      <td>{{ aze[3] }}<br/>( <tt style="color:blue">{{ quant[3]['quantite'] }}</tt> * 25 )</td>
+      <td></td>
+  </tr>    
+    </table>
+
+    </br>
+    <span><a id="btn_delete" href="{{ path( 'visiteur/menu' ) }}">Retour au menu</a></span>    
+    <span><a id="btn_delete" href="{{ path( 'visiteur/saisirMois' ) }}">Retour à la selection du mois</a></span>
+    
+</div>
+	 
+</div>
+
+<div class="footer">
+  <p>.</p>
+</div>
+
+{% endblock %}

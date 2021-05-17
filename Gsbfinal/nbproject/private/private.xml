@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/html/Gsbfinal/src/Controller/ComptableController.php</file>
+            <file>file:/var/www/html/Gsbfinal/templates/visiteur/menu.html.twig</file>
+            <file>file:/var/www/html/Gsbfinal/templates/visiteur/index.html.twig</file>
+            <file>file:/var/www/html/Gsbfinal/templates/comptable/index.html.twig</file>
+            <file>file:/var/www/html/Gsbfinal/templates/comptable/valider.html.twig</file>
+            <file>file:/var/www/html/Gsbfinal/templates/accueil/index.html.twig</file>
+            <file>file:/var/www/html/Gsbfinal/templates/visiteur/renseigner.html.twig</file>
+            <file>file:/var/www/html/Gsbfinal/old/formValidFrais.htm</file>
+            <file>file:/var/www/html/Gsbfinal/templates/visiteur/renseignerff.html.twig</file>
+            <file>file:/var/www/html/Gsbfinal/templates/visiteur/saisirMois.html.twig</file>
+            <file>file:/var/www/html/Gsbfinal/src/Controller/AccueilController.php</file>
+            <file>file:/var/www/html/Gsbfinal/templates/visiteur/renseignerfiche.html.twig</file>
+            <file>file:/var/www/html/Gsbfinal/src/Controller/VisiteurController.php</file>
+            <file>file:/var/www/html/Gsbfinal/include/classAuthentification.php</file>
+            <file>file:/var/www/html/Gsbfinal/config/routes.yaml</file>
+            <file>file:/var/www/html/Gsbfinal/templates/visiteur/renseignerfhf.html.twig</file>
+            <file>file:/var/www/html/Gsbfinal/old/formConsultFrais.htm</file>
+            <file>file:/var/www/html/Gsbfinal/templates/visiteur/consulter.html.twig</file>
+            <file>file:/var/www/html/Gsbfinal/templates/comptable/menu.html.twig</file>
+            <file>file:/var/www/html/Gsbfinal/templates/comptable/valider1.html.twig</file>
+        </group>
+    </open-files>
+</project-private>

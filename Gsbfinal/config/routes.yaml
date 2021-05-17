@@ -1,0 +1,83 @@
+accueil:
+      path: /
+      controller: App\Controller\AccueilController::index 
+
+
+visiteur:
+      path: /visiteur
+      controller: App\Controller\VisiteurController::index
+      
+visiteur/menu:
+      path: /visiteur/menu/
+      controller: App\Controller\VisiteurController::menu      
+      
+visiteur/consulter:      
+      path: /visiteur/consulter/
+      controller: App\Controller\VisiteurController::consulter
+      
+      
+visiteur/renseigner:      
+      path: /visiteur/renseigner
+      controller: App\Controller\VisiteurController::renseigner  
+      
+visiteur/renseigner/ff:      
+      path: /visiteur/renseigner/ff
+      controller: App\Controller\VisiteurController::renseignerff
+      
+visiteur/renseigner/fhf:      
+      path: /visiteur/renseigner/fhf
+      controller: App\Controller\VisiteurController::renseignerfhf     
+      
+visiteur/renseigner/fhf/confirmation:      
+      path: /visiteur/renseigner/fhf/confirmation/{idff}
+      controller: App\Controller\VisiteurController::confirmation  
+      
+visiteur/saisirMois:
+      path: /visiteur/saisirMois
+      controller: App\Controller\VisiteurController::saisirMois               
+  
+  
+ 
+      
+comptable:
+      path: /comptable
+      controller: App\Controller\ComptableController::index
+      
+comptable/menu:
+      path: /comptable/menu/
+      controller: App\Controller\ComptableController::menu       
+      
+comptable/suivre:
+      path: /comptable/suivre
+      controller: App\Controller\ComptableController::suivre      
+      
+comptable/valider:
+      path: /comptable/valider
+      controller: App\Controller\ComptableController::valider
+comptable/valider1:
+      path: /comptable/valider1
+      controller: App\Controller\ComptableController::valider1
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+

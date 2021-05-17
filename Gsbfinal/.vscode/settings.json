@@ -1,0 +1,5 @@
+{
+    "http.proxy": "http://proxy.sio.lla.fr",
+    "https.proxy": "http://proxy.sio.lla.fr",
+    "http.proxyAuthorization": null
+}

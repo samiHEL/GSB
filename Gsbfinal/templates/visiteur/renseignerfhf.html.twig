@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VisiteurController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    table { font-family: arial, sans-serif; border-collapse: collapse; width: 100%;}
+    td, th { border: 1px solid #dddddd; text-align: left; padding: 8px;}
+</style>
+
+<div class="example-wrapper">
+    <!--<h1>Hello !!! ✅</h1>-->
+    <h1>Renseigner un frais hors forfait</h1>
+
+    <p style=" color: greenyellow"> Connecté : {{ prenomV }} {{ nomV }} {{ idVisiteur }}  </p>
+    <p> Renseigner des frais hors forfait pour le mois courrant : {{ todaymy }} </p>
+
+
+    <table>
+  <tr>
+    <th>Date</th>
+    <th>Libellé</th>
+    <th>Montant</th>
+    <th>  </th>
+  </tr>   
+    
+      {% for i in 0..nbLigne %}
+          {% if tab is not empty %}
+          <tr>
+         <td>{{ tab[i]['date'] }}</td>
+         <td>{{ tab[i]['libelle'] }}</td>
+         <td>{{ tab[i]['montant'] }}</td>
+         {% set idff = tab[i]['id'] %}
+         {#<td><a href="{{ path( 'visiteur/renseigner/fhf/confirmation' ) }}">Supprimer</a></td>#}
+         <td><a id="btn_delete" href="{{ path( 'visiteur/renseigner/fhf/confirmation', { 'idff': idff } ) }}" 
+                onclick="return confirm('Etes-vous sûr de vouloir le supprimer ? ')">Supprimer</a></td>
+          </tr>
+          {% endif %}
+      {% endfor %}  
+          {% if tab is empty %}
+            <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            </tr>
+          {% endif %}
+     
+  {#{% endfor %}#}
+    </table>
+    {% if tab is empty %}
+        <p style="color:red"> Aucun frais hors forfait ce mois ci. </p>
+    {% endif %}    
+    
+    <p> Nouvel élement hors forfait : </p>
+    {{ form(formulaire) }}
+    
+    {#
+    {% if errorDate1 is defined %}
+        {{ errorDate1 }}
+    {% endif %}
+    {% if errorDate2 is defined %}
+        {{ errorDate2 }}
+    {% endif %}
+    {% if errorMontant is defined %}
+        {{ errorMontant }}
+    {% endif %}
+    #}
+        
+    {% if errorDate1 is defined %}
+        <p style="color: red">{{ errorDate1 }}</p>
+    {% endif %}
+    {% if errorMontant is defined %}
+        <p style="color: red">{{ errorMontant }}</p>
+    {% endif %}
+    
+    <br/>
+    <a id="btn_delete" href="{{ path( 'visiteur/menu' ) }}">Retour au menu</a>
+    <br/>
+    <a id="btn_delete" href="{{ path( 'visiteur/renseigner' ) }}">Retour à renseigner</a>
+
+</div>
+{% endblock %}

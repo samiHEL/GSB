@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ComptableController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+{% block stylesheets %}  
+                <LINK rel="stylesheet" href={{ asset('css/style.css') }}  type="text/css">
+{% endblock %}
+
+<div id="sideNavigation" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="http://127.0.0.1:8000/">Accueil</a>
+  <a href="http://127.0.0.1:8000/comptable/menu/">Menu-Comptable</a>
+  <a href="http://127.0.0.1:8000/comptable">Deconnexion</a>
+</div>
+ 
+<nav class="topnav">
+  <a href="#" onclick="openNav()">
+    <svg width="30" height="30" id="icoOpen">
+        <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+        <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+        <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+    </svg>
+  </a>
+  <center><b>GSB Comptable-Valider-Fiche<b><center>
+</nav>
+
+<div class="example-wrapper">
+    
+    <p>Si fiches par encore créée elles le seront à l'execution</p>
+    
+    {{ form(formulaire) }}
+    
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("sideNavigation").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+ 
+function closeNav() {
+    document.getElementById("sideNavigation").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+</script>
+
+<script>
+	var ctx = document.getElementById('graph1').getContext('2d')
+	ctx.canvas.width = 700;
+	ctx.canvas.height = 300;
+	var data = {
+		labels: ['Taux de clicks', 'nombre de vols', 'montant recupéré', 'Montant clicks théorique(si 100%)'],
+		datasets: [
+			{
+				backgroundColor:'#406bca',
+				data: [96,8,309,309]
+			
+			}
+			
+		]
+	}
+	
+	var options = {
+		responsive: false
+	}
+	
+	var config = {
+		type: 'bar',
+		data: data,
+		options: options
+	}
+	var graph1 = new Chart(ctx, config)
+</script>
+	
+
+{% endblock %}
